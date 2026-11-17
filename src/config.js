@@ -50,11 +50,12 @@ const defaults = { //mess
     keep_on_top: false, //whether or not to keep window on top
     pause_on_blur: false, //whether or not to pause video when out of focus (such as tabbing out)
     default_guest_mode: false, //automatically enter guest mode on launch
+    ui_language: 'system', //settings and HomeTube UI language: system, ko, or en
     userstyles: false, //whether or not to enable custom CSS injection
     disabled_userstyles: [], //array of filenames that are disabled
     touch_overlay: true, //whether or not to enable the touch overlay interface when touch is detected
     controller_support: true, //whether or not to enable game controller support
-    device_discoverability: true, //whether or not to enable DIAL support
+    remote_enabled: false, //whether the local Wi-Fi remote server is enabled
     auto_update: true //whether or not to download and install updates automatically (only on installs that support it)
 }
 

@@ -31,6 +31,7 @@ the row types a schema or page can use:
               also takes { page, summary?(config) }, which adds a link to a page of extra options below it while the toggle is on
     link    - { page, title, summary?(config) } opens a page that has no on/off of its own
     button  - { title, run() } runs an action, which may be async
+    device  - { title, description, actionLabel, run() } renders a device and its action on one row
     notice  - { text, title?, tone? } a callout, tone is info (default), success, warning or error
     info    - { title, value } a label with a read-only value
     text    - { text } a line of text, either a string or (config) => string
@@ -77,6 +78,13 @@ const rowTypes = {
         ], () => row.run());
     },
 
+    device(row) {
+        return focusable(`row:${rowId(row)}`, 'vt-row vt-row-device', [
+            info(row.title, row.description),
+            el('span', { className: 'vt-row-device-action', textContent: row.actionLabel })
+        ], () => row.run());
+    },
+
     notice(row, context) {
         return el('div', { className: `vt-notice vt-notice-${row.tone || 'info'}` }, [
             info(row.title, resolve(row.text, context.config))
@@ -88,6 +96,15 @@ const rowTypes = {
             info(row.title, row.description),
             el('span', { className: 'vt-row-value', textContent: resolve(row.value, context.config) ?? '' })
         ]);
+    },
+
+    image(row, context) {
+        const source = resolve(row.src, context.config)
+        if (!source) return el('div', { className: 'vt-row vt-row-static' }, [ info(row.title, row.description) ])
+        return el('div', { className: 'vt-row vt-row-image' }, [
+            info(row.title, row.description),
+            el('img', { className: 'vt-row-image-content', src: source, alt: row.alt || '' })
+        ])
     },
 
     text(row, context) {
@@ -144,16 +161,6 @@ function countFocusable(rows) {
     return visibleRows(rows).filter((row) => [ 'toggle', 'link', 'button' ].includes(row.type)).length;
 }
 
-//shown under every category if the language file is missing strings
-function translateLink(context) {
-    const label = context.locale.generic.translate.replace('{language}', context.translation.name)
-
-    return focusable('translate', 'vt-translate', [
-        el('span', { textContent: label }),
-        el('span', { className: 'vt-chevron', textContent: '›' })
-    ], context.openTranslation);
-}
-
 function renderCategory(category, context) {
     const sections = category.sections.filter((section) => !section.hide && visibleRows(section.rows).length)
     const count = sections.reduce((n, section) => n + countFocusable(section.rows), 0)
@@ -170,8 +177,7 @@ function renderCategory(category, context) {
                 el('h3', { className: 'vt-section-title', textContent: context.locale.sections[section.id] || '' }),
                 card(section.rows, context)
             ])
-        )),
-        context.translation.complete ? null : translateLink(context)
+        ))
     ]);
 }
 

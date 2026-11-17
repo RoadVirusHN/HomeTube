@@ -1,0 +1,75 @@
+:root {
+    color-scheme: dark;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #f7f7f7;
+    background: #111;
+    font-synthesis: none;
+    --surface: #202020;
+    --button: #353535;
+    --accent: #ff5e5e;
+    --touch-height: 64px;
+}
+
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { height: 100dvh; padding: max(7px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(7px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left)); }
+main { display: flex; flex-direction: column; gap: 8px; width: min(100%, 520px); height: 100%; margin: 0 auto; }
+header { display: flex; flex: none; align-items: center; justify-content: space-between; gap: 8px; min-height: 36px; }
+h1 { overflow: hidden; margin: 0; font-size: 17px; font-weight: 650; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
+h1 span { color: #bdbdbd; font-weight: 500; }
+button, input { min-height: var(--touch-height); border: 1px solid #686868; border-radius: 15px; font: inherit; font-size: 17px; }
+button { margin: 0; color: #fff; background: var(--button); font-weight: 750; touch-action: manipulation; user-select: none; -webkit-tap-highlight-color: transparent; }
+button:active { filter: brightness(1.32); transform: scale(.98); }
+button:focus-visible, input:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.status-button { display: flex; align-self: start; align-items: center; justify-content: center; gap: 5px; min-width: 0; min-height: 42px; padding: 4px 6px; border-radius: 12px; color: #ddd; font-size: 11px; line-height: 1.1; }
+.status-button.connected { color: #73e4af; border-color: #48d597; }
+.status-button.disconnected { color: #ff8585; border-color: #ff6969; }
+.status-button.connecting { color: #f2ca66; border-color: #e3ad4b; }
+.dot { width: 12px; height: 12px; flex: none; border-radius: 50%; background: #ff6969; box-shadow: 0 0 0 3px #ff696933; }
+.connected .dot { background: #48d597; box-shadow: 0 0 0 3px #48d59733; }
+.connecting .dot { background: #e3ad4b; box-shadow: 0 0 0 3px #e3ad4b33; }
+.remote-controls { display: grid; flex: 1; grid-template-rows: minmax(0, 1fr) auto; gap: 9px; width: 100%; min-height: 0; }
+.remote-controls[hidden] { display: none; }
+.dpad { display: grid; align-self: center; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(62px, 1fr)); gap: 8px; width: 100%; height: min(100%, 270px); max-height: 270px; min-height: 0; margin: auto 0; }
+.dpad button { display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 0; border-radius: 19px; font-size: 25px; }
+.dpad button[data-command="SELECT"] { color: #171717; background: var(--accent); border: 0; font-size: 16px; }
+.dpad .home-button, .dpad .back-button { flex-direction: column; gap: 4px; font-size: 15px; }
+.dpad .home-button { color: #fff; background: #276ef1; border-color: #5a91ff; }
+.dpad .back-button { color: #171717; background: #f2c744; border-color: #ffdf72; }
+.dpad .control-icon { width: 25px; height: 25px; }
+.playback-controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; width: 100%; }
+.playback-controls button { display: flex; align-items: center; justify-content: center; gap: 6px; min-width: 0; min-height: 93px; padding: 5px 4px; font-size: 14px; white-space: nowrap; }
+.playback-controls button[data-command="PLAY_PAUSE"] { color: #fff; background: #16834e; border-color: #42bb7e; }
+.control-icon { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.playback-controls button[data-command="PLAY_PAUSE"] .control-icon path:first-child { fill: currentColor; }
+.modal { position: fixed; width: min(460px, calc(100% - 24px)); max-width: none; max-height: min(84svh, 720px); overflow-y: auto; padding: 22px; border: 1px solid #626262; border-radius: 22px; color: #f7f7f7; background: var(--surface); box-shadow: 0 20px 70px #000b; }
+.modal::backdrop { background: #000a; backdrop-filter: blur(4px); }
+.modal h2 { margin: 0 70px 12px 0; font-size: 24px; }
+.modal p { color: #d0d0d0; font-size: 15px; line-height: 1.45; }
+.modal-close-form { position: absolute; top: 12px; right: 12px; }
+.close-button { min-width: 68px; min-height: 48px; padding: 0 12px; border: 1px solid #777; font-size: 15px; }
+.modal label { display: block; margin: 16px 0 7px; font-size: 15px; font-weight: 750; }
+.modal input { width: 100%; padding: 0 14px; color: #fff; background: #121212; }
+.modal .primary-button { width: 100%; min-height: 60px; margin-top: 10px; color: #171717; background: var(--accent); border: 0; font-size: 17px; }
+.modal .secondary-button { width: 100%; min-height: 54px; margin-top: 10px; border-color: #777; color: #f2f2f2; background: #343434; font-size: 16px; }
+.modal .disconnect-button { width: 100%; min-height: 60px; margin-top: 10px; border-color: #bb5555; color: #ffd7d7; background: #502727; font-size: 16px; }
+
+@media (max-height: 620px) {
+    :root { --touch-height: 56px; }
+    body { padding-top: max(4px, env(safe-area-inset-top)); padding-bottom: max(4px, env(safe-area-inset-bottom)); }
+    main { gap: 5px; }
+    header { min-height: 30px; }
+    .dpad { height: min(100%, 240px); max-height: 240px; grid-template-rows: repeat(3, minmax(54px, 1fr)); gap: 6px; }
+    .playback-controls { gap: 6px; }
+    .playback-controls button { min-height: 81px; gap: 4px; font-size: 12px; }
+}
+
+@media (max-height: 480px) {
+    .dpad { height: min(100%, 204px); max-height: 204px; grid-template-rows: repeat(3, minmax(46px, 1fr)); }
+    .playback-controls button { min-height: 69px; }
+}
+
+@media (max-width: 360px) {
+    .playback-controls button { gap: 3px; padding-inline: 2px; font-size: 12px; }
+    .playback-controls .control-icon { width: 17px; height: 17px; }
+}

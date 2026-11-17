@@ -5,7 +5,7 @@
         "steam_controller_notice": "External controller isn't detected? Try the steamdeck-input-disabler plugin from Decky.",
         "encryption_error": {
             "title": "Something went wrong",
-            "text": "This video couldn't be decoded. Movies aren't supported in VacuumTube due to encryption. If this happens on other videos, try logging in or switching accounts.",
+            "text": "This video couldn't be decoded. Movies aren't supported in HomeTube due to encryption. If this happens on other videos, try logging in or switching accounts.",
             "switch_accounts": "Switch Accounts",
             "okay": "Okay"
         }
@@ -13,17 +13,17 @@
     "settings": {
         "generic": {
             "title": "Settings",
-            "description": "Opens the VacuumTube settings overlay. You can access this overlay anywhere by pressing Ctrl+O on your keyboard",
-            "button_label": "Open VacuumTube Settings",
+            "description": "Opens the HomeTube settings overlay. You can access this overlay anywhere by pressing Ctrl+O on your keyboard",
+            "button_label": "Open HomeTube Settings",
             "hint": "Use arrow keys to navigate",
             "option_count": "{count} options",
-            "translate": "Help translate VacuumTube to {language}",
+            "translate": "Help translate HomeTube to {language}",
             "ratio": "{on} of {total}"
         },
         "categories": {
             "general": {
                 "title": "General",
-                "description": "How the VacuumTube window behaves."
+                "description": "How the HomeTube window behaves."
             },
             "playback": {
                 "title": "Playback",
@@ -162,7 +162,7 @@
         },
         "fullscreen": {
             "title": "Fullscreen",
-            "description": "Enables fullscreen, and makes VacuumTube always launch in fullscreen"
+            "description": "Enables fullscreen, and makes HomeTube always launch in fullscreen"
         },
         "no_window_decorations": {
             "title": "No Window Decorations",
@@ -170,15 +170,15 @@
         },
         "keep_on_top": {
             "title": "Keep on Top",
-            "description": "Enables Keep on Top, and makes VacuumTube launch with the window pinned on top of every other window"
+            "description": "Enables Keep on Top, and makes HomeTube launch with the window pinned on top of every other window"
         },
         "auto_update": {
             "title": "Automatic Updates",
-            "description": "Download new versions in the background and install them when VacuumTube closes. When off, you can still check for updates from the About page"
+            "description": "Download new versions in the background and install them when HomeTube closes. When off, you can still check for updates from the About page"
         },
         "pause_on_blur": {
             "title": "Pause on Blur",
-            "description": "Pause current video when VacuumTube loses focus (e.g. tabbing out or minimizing the window)"
+            "description": "Pause current video when HomeTube loses focus (e.g. tabbing out or minimizing the window)"
         },
         "default_guest_mode": {
             "title": "Default Guest Mode",
@@ -187,9 +187,9 @@
         "features": {
             "title": "Features",
             "notice_title": "Not part of the default experience",
-            "notice_description": "These optional features extend VacuumTube beyond the standard TV YouTube experience. Enable them below to acknowledge that they rely on internal YouTube behavior and may change or stop working without notice.",
+            "notice_description": "These optional features extend HomeTube beyond the standard TV YouTube experience. Enable them below to acknowledge that they rely on internal YouTube behavior and may change or stop working without notice.",
             "enable_title": "Enable optional features",
-            "enable_description": "I understand that these features are outside VacuumTube's default experience and may change or break.",
+            "enable_description": "I understand that these features are outside HomeTube's default experience and may change or break.",
             "settings": {
                 "music_mode": {
                     "title": "Music Mode",
@@ -222,13 +222,32 @@
             "title": "Controller Support",
             "description": "Enables support for game controllers, including navigation and video playback controls. Requires an external controller, such as an Xbox controller"
         },
-        "device_discoverability": {
-            "title": "Device Discoverability",
-            "description": "Allows VacuumTube to be discovered by the YouTube mobile app on devices within the same local network. Relaunch after toggling"
+        "remote": {
+            "title": "HomeTube Remote",
+            "description": "Pair phones on your local Wi-Fi to use them as HomeTube remotes.",
+            "pageQrTitle": "Remote page QR code",
+            "pageQrDescription": "Scan with a phone that is already paired to open its remote page.",
+            "status": "Server status",
+            "running": "Running on the local network",
+            "stopped": "Stopped",
+            "connected": "Connected phones",
+            "start": "Start server and show pairing QR",
+            "startFailed": "HomeTube could not start the local server. Check whether another app is using the remote port.",
+            "pair": "Show a pairing QR code",
+            "refreshQr": "Create a new pairing QR code",
+            "stop": "Stop remote server",
+            "pairing": "Pairing window",
+            "pairingWindowOpen": "QR code is displayed in the secure pairing window",
+            "focusPairing": "Bring pairing window to front",
+            "deviceConnected": "Connected",
+            "deviceDisconnected": "Not connected",
+            "revoke": "Remove {name}",
+            "revokeButton": "Remove",
+            "notice": "Use a trusted private Wi-Fi network. Local traffic uses HTTP and is not encrypted; someone monitoring that network could capture a session token. Allow HomeTube through Windows Firewall on private networks only. No router port is opened. Pairing codes expire after two minutes."
         },
         "mac_permissions": {
             "title": "Permissions",
-            "description": "Manage macOS permissions used by VacuumTube.",
+            "description": "Manage macOS permissions used by HomeTube.",
             "microphone_title": "Microphone",
             "microphone_description": "Used only when you start YouTube voice search.",
             "status_label": "Status",
@@ -236,12 +255,12 @@
             "request_microphone": "Request Microphone Access",
             "open_microphone_settings": "Open macOS Microphone Settings",
             "reset_microphone": "Troubleshooting: Reset Permission Prompt",
-            "relaunch_app": "Relaunch VacuumTube",
-            "restart_required": "Changes made in macOS Settings require relaunching VacuumTube.",
+            "relaunch_app": "Relaunch HomeTube",
+            "restart_required": "Changes made in macOS Settings require relaunching HomeTube.",
             "request_granted": "Microphone access is allowed. No permission prompt is needed.",
             "request_not_determined": "macOS still has not shown a permission prompt. Use Reset Permission Prompt, then try again.",
-            "request_denied_help": "macOS will not show the permission prompt again while access is denied. Turn it on in macOS Settings, then relaunch VacuumTube.",
-            "request_failed": "VacuumTube could not request microphone access. Open macOS Settings and relaunch the app after changing access.",
+            "request_denied_help": "macOS will not show the permission prompt again while access is denied. Turn it on in macOS Settings, then relaunch HomeTube.",
+            "request_failed": "HomeTube could not request microphone access. Open macOS Settings and relaunch the app after changing access.",
             "resetting_microphone": "Resetting the saved macOS microphone decision...",
             "statuses": {
                 "not-determined": "Not Requested",
@@ -288,16 +307,16 @@
             },
             "updates": {
                 "idle_title": "Updates",
-                "idle_detail": "Check whether a newer version of VacuumTube is available.",
+                "idle_detail": "Check whether a newer version of HomeTube is available.",
                 "check_now": "Check for updates",
                 "checking_title": "Checking for updates…",
-                "checking_detail": "Looking for the newest VacuumTube release.",
+                "checking_detail": "Looking for the newest HomeTube release.",
                 "checking_button": "Checking…",
                 "current_title": "You’re up to date",
-                "current_detail": "VacuumTube {version} is the newest version available.",
+                "current_detail": "HomeTube {version} is the newest version available.",
                 "check_again": "Check again",
-                "available_title": "VacuumTube {version} is available",
-                "available_automatic_detail": "Download the update now, then restart VacuumTube when it is ready.",
+                "available_title": "HomeTube {version} is available",
+                "available_automatic_detail": "Download the update now, then restart HomeTube when it is ready.",
                 "available_manual_detail": "Download the latest build and replace your current copy.",
                 "download_update": "Download update",
                 "download_latest": "Download latest version",
@@ -305,7 +324,7 @@
                 "downloading_detail": "The update is {percent}% downloaded.",
                 "downloading_button": "Downloading… {percent}%",
                 "ready_title": "Update ready to install",
-                "ready_detail": "Restart VacuumTube to install version {version}.",
+                "ready_detail": "Restart HomeTube to install version {version}.",
                 "install_update": "Restart and install",
                 "error_title": "Couldn’t check for updates",
                 "error_detail": "Check your connection and try again, or open the releases page.",
@@ -317,6 +336,18 @@
                 "view_update_source": "View update source",
                 "view_releases": "View latest releases"
             }
+        },
+        "language": {
+            "title": "Language",
+            "description": "Choose the language used by HomeTube.",
+            "current": "Current language",
+            "system": "System default",
+            "ko": "Korean",
+            "en": "English",
+            "korean": "Korean",
+            "english": "English",
+            "selected": "Currently selected",
+            "restart": "Restart HomeTube to apply a language change."
         }
     },
     "sponsorblock": {
@@ -332,7 +363,7 @@
     "donate_unused": {
         "setting": {
             "title": "Donate",
-            "description": "Support VacuumTube's development by making a donation! You can donate by visiting shy.rocks/donate, or by pressing the button below to open the donation page in your browser",
+            "description": "Support HomeTube's development by making a donation! You can donate by visiting shy.rocks/donate, or by pressing the button below to open the donation page in your browser",
             "button_label": "Donate"
         }
     }

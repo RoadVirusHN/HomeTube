@@ -26,11 +26,11 @@
         },
         "fullscreen": {
             "title": "Helskärm",
-            "description": "Aktiverar helskärm och ser till att VacuumTube alltid startar i helskärmsläge."
+            "description": "Aktiverar helskärm och ser till att HomeTube alltid startar i helskärmsläge."
         },
         "keep_on_top": {
             "title": "Fäst högst upp",
-            "description": "Aktiverar \"fäst högst upp\", och startar VacuumTube med sitt fönster fäst ovanför alla andra fönster."
+            "description": "Aktiverar \"fäst högst upp\", och startar HomeTube med sitt fönster fäst ovanför alla andra fönster."
         },
         "userstyles": {
             "title": "Egen CSS (Stilmallar)",

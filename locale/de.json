@@ -5,7 +5,7 @@
         "steam_controller_notice": "Externer Controller wird nicht erkannt? Probiere das steamdeck-input-disabler-Plugin von Decky aus.",
         "encryption_error": {
             "title": "Etwas ist schiefgelaufen",
-            "text": "Dieses Video konnte nicht dekodiert werden. Filme werden in VacuumTube wegen Verschlüsselung nicht unterstützt. Tritt das auch bei anderen Videos auf, versuche dich anzumelden oder das Konto zu wechseln.",
+            "text": "Dieses Video konnte nicht dekodiert werden. Filme werden in HomeTube wegen Verschlüsselung nicht unterstützt. Tritt das auch bei anderen Videos auf, versuche dich anzumelden oder das Konto zu wechseln.",
             "switch_accounts": "Konto wechseln",
             "okay": "Okay"
         }
@@ -13,17 +13,17 @@
     "settings": {
         "generic": {
             "title": "Einstellungen",
-            "description": "Öffnet das VacuumTube-Einstellungsfenster. Du kannst es überall mit Strg+O öffnen",
-            "button_label": "VacuumTube-Einstellungen öffnen",
+            "description": "Öffnet das HomeTube-Einstellungsfenster. Du kannst es überall mit Strg+O öffnen",
+            "button_label": "HomeTube-Einstellungen öffnen",
             "hint": "Mit den Pfeiltasten navigieren",
             "option_count": "{count} Optionen",
-            "translate": "Hilf mit, VacuumTube auf {language} zu übersetzen",
+            "translate": "Hilf mit, HomeTube auf {language} zu übersetzen",
             "ratio": "{on} von {total}"
         },
         "categories": {
             "general": {
                 "title": "Allgemein",
-                "description": "Wie sich das VacuumTube-Fenster verhält."
+                "description": "Wie sich das HomeTube-Fenster verhält."
             },
             "playback": {
                 "title": "Wiedergabe",
@@ -162,7 +162,7 @@
         },
         "fullscreen": {
             "title": "Vollbild",
-            "description": "Aktiviert den Vollbildmodus und lässt VacuumTube immer im Vollbild starten"
+            "description": "Aktiviert den Vollbildmodus und lässt HomeTube immer im Vollbild starten"
         },
         "no_window_decorations": {
             "title": "Ohne Fensterdekoration",
@@ -170,22 +170,22 @@
         },
         "keep_on_top": {
             "title": "Im Vordergrund halten",
-            "description": "Aktiviert „Im Vordergrund halten“ und lässt VacuumTube mit dem Fenster über allen anderen Fenstern angeheftet starten"
+            "description": "Aktiviert „Im Vordergrund halten“ und lässt HomeTube mit dem Fenster über allen anderen Fenstern angeheftet starten"
         },
         "auto_update": {
             "title": "Automatische Updates",
-            "description": "Lädt neue Versionen im Hintergrund herunter und installiert sie beim Schließen von VacuumTube. Wenn aus, kannst du auf der Info-Seite weiterhin nach Updates suchen"
+            "description": "Lädt neue Versionen im Hintergrund herunter und installiert sie beim Schließen von HomeTube. Wenn aus, kannst du auf der Info-Seite weiterhin nach Updates suchen"
         },
         "pause_on_blur": {
             "title": "Bei Fokusverlust pausieren",
-            "description": "Pausiert das aktuelle Video, wenn VacuumTube den Fokus verliert (z. B. beim Wegschalten oder Minimieren des Fensters)"
+            "description": "Pausiert das aktuelle Video, wenn HomeTube den Fokus verliert (z. B. beim Wegschalten oder Minimieren des Fensters)"
         },
         "features": {
             "title": "Funktionen",
             "notice_title": "Nicht Teil der Standarderfahrung",
-            "notice_description": "Diese optionalen Funktionen erweitern VacuumTube über die normale TV-YouTube-Erfahrung hinaus. Aktiviere sie unten, um zu bestätigen, dass sie auf internem YouTube-Verhalten beruhen und sich ohne Vorankündigung ändern oder aufhören können zu funktionieren.",
+            "notice_description": "Diese optionalen Funktionen erweitern HomeTube über die normale TV-YouTube-Erfahrung hinaus. Aktiviere sie unten, um zu bestätigen, dass sie auf internem YouTube-Verhalten beruhen und sich ohne Vorankündigung ändern oder aufhören können zu funktionieren.",
             "enable_title": "Optionale Funktionen aktivieren",
-            "enable_description": "Ich verstehe, dass diese Funktionen außerhalb der Standarderfahrung von VacuumTube liegen und sich ändern oder kaputtgehen können.",
+            "enable_description": "Ich verstehe, dass diese Funktionen außerhalb der Standarderfahrung von HomeTube liegen und sich ändern oder kaputtgehen können.",
             "settings": {
                 "music_mode": {
                     "title": "Musikmodus",
@@ -220,11 +220,11 @@
         },
         "device_discoverability": {
             "title": "Geräteauffindbarkeit",
-            "description": "Ermöglicht, dass VacuumTube von der YouTube-App auf Geräten im selben lokalen Netzwerk gefunden wird. Nach Umschalten neu starten"
+            "description": "Ermöglicht, dass HomeTube von der YouTube-App auf Geräten im selben lokalen Netzwerk gefunden wird. Nach Umschalten neu starten"
         },
         "mac_permissions": {
             "title": "Berechtigungen",
-            "description": "Verwalte die von VacuumTube genutzten macOS-Berechtigungen.",
+            "description": "Verwalte die von HomeTube genutzten macOS-Berechtigungen.",
             "microphone_title": "Mikrofon",
             "microphone_description": "Wird nur verwendet, wenn du die YouTube-Sprachsuche startest.",
             "status_label": "Status",
@@ -232,12 +232,12 @@
             "request_microphone": "Mikrofonzugriff anfordern",
             "open_microphone_settings": "macOS-Mikrofoneinstellungen öffnen",
             "reset_microphone": "Fehlerbehebung: Berechtigungsabfrage zurücksetzen",
-            "relaunch_app": "VacuumTube neu starten",
-            "restart_required": "In den macOS-Einstellungen vorgenommene Änderungen erfordern einen Neustart von VacuumTube.",
+            "relaunch_app": "HomeTube neu starten",
+            "restart_required": "In den macOS-Einstellungen vorgenommene Änderungen erfordern einen Neustart von HomeTube.",
             "request_granted": "Mikrofonzugriff ist erlaubt. Es ist keine Berechtigungsabfrage nötig.",
             "request_not_determined": "macOS hat noch keine Berechtigungsabfrage angezeigt. Nutze „Berechtigungsabfrage zurücksetzen“ und versuche es erneut.",
-            "request_denied_help": "macOS zeigt die Berechtigungsabfrage nicht erneut an, solange der Zugriff verweigert wird. Aktiviere ihn in den macOS-Einstellungen und starte VacuumTube neu.",
-            "request_failed": "VacuumTube konnte keinen Mikrofonzugriff anfordern. Öffne die macOS-Einstellungen und starte die App nach dem Ändern des Zugriffs neu.",
+            "request_denied_help": "macOS zeigt die Berechtigungsabfrage nicht erneut an, solange der Zugriff verweigert wird. Aktiviere ihn in den macOS-Einstellungen und starte HomeTube neu.",
+            "request_failed": "HomeTube konnte keinen Mikrofonzugriff anfordern. Öffne die macOS-Einstellungen und starte die App nach dem Ändern des Zugriffs neu.",
             "resetting_microphone": "Gespeicherte macOS-Mikrofonentscheidung wird zurückgesetzt…",
             "statuses": {
                 "not-determined": "Nicht angefragt",
@@ -284,16 +284,16 @@
             },
             "updates": {
                 "idle_title": "Updates",
-                "idle_detail": "Prüfen, ob eine neuere Version von VacuumTube verfügbar ist.",
+                "idle_detail": "Prüfen, ob eine neuere Version von HomeTube verfügbar ist.",
                 "check_now": "Nach Updates suchen",
                 "checking_title": "Suche nach Updates…",
-                "checking_detail": "Neueste VacuumTube-Version wird gesucht.",
+                "checking_detail": "Neueste HomeTube-Version wird gesucht.",
                 "checking_button": "Wird geprüft…",
                 "current_title": "Du bist auf dem neuesten Stand",
-                "current_detail": "VacuumTube {version} ist die neueste verfügbare Version.",
+                "current_detail": "HomeTube {version} ist die neueste verfügbare Version.",
                 "check_again": "Erneut prüfen",
-                "available_title": "VacuumTube {version} ist verfügbar",
-                "available_automatic_detail": "Lade das Update jetzt herunter und starte VacuumTube neu, wenn es bereit ist.",
+                "available_title": "HomeTube {version} ist verfügbar",
+                "available_automatic_detail": "Lade das Update jetzt herunter und starte HomeTube neu, wenn es bereit ist.",
                 "available_manual_detail": "Lade die neueste Version herunter und ersetze deine aktuelle Kopie.",
                 "download_update": "Update herunterladen",
                 "download_latest": "Neueste Version herunterladen",
@@ -301,7 +301,7 @@
                 "downloading_detail": "Das Update ist zu {percent} % heruntergeladen.",
                 "downloading_button": "Wird heruntergeladen… {percent} %",
                 "ready_title": "Update bereit zur Installation",
-                "ready_detail": "Starte VacuumTube neu, um Version {version} zu installieren.",
+                "ready_detail": "Starte HomeTube neu, um Version {version} zu installieren.",
                 "install_update": "Neu starten und installieren",
                 "error_title": "Updates konnten nicht geprüft werden",
                 "error_detail": "Prüfe deine Verbindung und versuche es erneut oder öffne die Releases-Seite.",
@@ -328,7 +328,7 @@
     "donate_unused": {
         "setting": {
             "title": "Spenden",
-            "description": "Unterstütze die Entwicklung von VacuumTube mit einer Spende! Du kannst über shy.rocks/donate spenden oder unten auf die Schaltfläche drücken, um die Spendenseite im Browser zu öffnen",
+            "description": "Unterstütze die Entwicklung von HomeTube mit einer Spende! Du kannst über shy.rocks/donate spenden oder unten auf die Schaltfläche drücken, um die Spendenseite im Browser zu öffnen",
             "button_label": "Spenden"
         }
     }

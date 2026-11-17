@@ -1,0 +1,178 @@
+{
+    "settings": {
+        "categories": {
+            "general": {
+                "title": "일반",
+                "description": "HomeTube 창의 동작을 설정합니다."
+            },
+            "playback": {
+                "title": "재생",
+                "description": "재생 항목과 동영상 표시 방식을 설정합니다."
+            },
+            "appearance": {
+                "title": "화면",
+                "description": "화면에 표시되는 항목과 모양을 설정합니다."
+            },
+            "controls": {
+                "title": "조작 및 기기",
+                "description": "입력 방법과 연결된 기기를 관리합니다."
+            },
+            "advanced": {
+                "title": "고급",
+                "description": "성능 설정과 선택 기능을 관리합니다."
+            }
+        },
+        "sections": {
+            "window": "창",
+            "behavior": "동작",
+            "updates": "업데이트",
+            "content": "콘텐츠",
+            "quality": "화질 및 호환성",
+            "interface": "화면 구성",
+            "userstyles": "사용자 CSS",
+            "input": "입력",
+            "devices": "기기",
+            "performance": "성능",
+            "experimental": "실험 기능"
+        },
+        "remote": {
+            "title": "HomeTube 리모컨",
+            "description": "같은 로컬 Wi-Fi의 휴대폰을 HomeTube 리모컨으로 연결합니다.",
+            "pageQrTitle": "리모컨 페이지 QR 코드",
+            "pageQrDescription": "이미 연결한 휴대폰으로 스캔하면 리모컨 페이지를 바로 엽니다.",
+            "status": "서버 상태",
+            "running": "로컬 네트워크에서 실행 중",
+            "stopped": "중지됨",
+            "connected": "연결된 휴대폰",
+            "start": "서버 시작 및 페어링 QR 표시",
+            "startFailed": "로컬 서버를 시작하지 못했습니다. 다른 앱이 리모컨 포트를 사용 중인지 확인해 주세요.",
+            "pair": "페어링 QR 코드 표시",
+            "refreshQr": "새 페어링 QR 코드 만들기",
+            "stop": "리모컨 서버 중지",
+            "pairing": "페어링 창",
+            "pairingWindowOpen": "보안 페어링 창에 QR 코드가 표시되어 있습니다.",
+            "focusPairing": "페어링 창 앞으로 가져오기",
+            "deviceConnected": "연결됨",
+            "deviceDisconnected": "연결 안 됨",
+            "revoke": "{name} 연결 해제",
+            "revokeButton": "해제하기",
+            "notice": "신뢰할 수 있는 개인 Wi-Fi에서만 사용하세요. 로컬 통신은 HTTP로 암호화되지 않아 같은 네트워크를 감시하는 사람이 세션 토큰을 볼 수 있습니다. Windows 방화벽에서는 개인 네트워크만 허용하세요. 라우터 포트는 열지 않습니다. 페어링 코드는 2분 뒤 만료됩니다."
+        },
+        "generic": {
+            "title": "설정",
+            "description": "HomeTube 설정 화면을 엽니다. 키보드에서 Ctrl+O를 누르면 언제든지 열 수 있습니다.",
+            "button_label": "HomeTube 설정 열기",
+            "hint": "방향키로 이동하세요",
+            "option_count": "{count}개 옵션",
+            "translate": "HomeTube {language} 번역에 참여하기",
+            "ratio": "{total}개 중 {on}개"
+        },
+        "fullscreen": {
+            "title": "전체 화면",
+            "description": "전체 화면을 사용하고 HomeTube를 항상 전체 화면으로 시작합니다."
+        },
+        "no_window_decorations": {
+            "title": "창 테두리 숨기기",
+            "description": "제목 표시줄과 창 테두리를 숨깁니다. 변경 후 HomeTube를 다시 시작해야 합니다."
+        },
+        "keep_on_top": {
+            "title": "항상 위에 표시",
+            "description": "HomeTube 창을 다른 모든 창보다 위에 표시합니다."
+        },
+        "pause_on_blur": {
+            "title": "창이 비활성화되면 일시정지",
+            "description": "HomeTube 창이 최소화되거나 다른 창으로 전환되면 현재 동영상을 일시정지합니다."
+        },
+        "default_guest_mode": {
+            "title": "게스트 모드로 시작",
+            "description": "시작할 때 자동으로 게스트 모드에 진입합니다."
+        },
+        "auto_update": {
+            "title": "자동 업데이트",
+            "description": "새 버전을 백그라운드에서 내려받고 HomeTube를 닫을 때 설치합니다. 끄더라도 정보 화면에서 업데이트를 확인할 수 있습니다."
+        },
+        "adblock": {
+            "title": "광고 차단",
+            "description": "동영상과 피드 광고를 차단합니다."
+        },
+        "sponsorblock": {
+            "title": "SponsorBlock",
+            "description": "커뮤니티 데이터베이스를 사용해 동영상의 스폰서 구간을 건너뜁니다."
+        },
+        "block_continue_watching": {
+            "title": "계속 시청 확인 차단",
+            "description": "오랫동안 입력이 없을 때 표시되는 “동영상이 일시중지되었습니다. 계속 시청하시겠습니까?” 안내를 차단합니다."
+        },
+        "dearrow": {
+            "title": "DeArrow",
+            "description": "커뮤니티 데이터베이스를 사용해 제목과 미리보기 이미지를 더 정확한 내용으로 바꿉니다. 서버에서 정보를 가져오므로 로딩이 느려질 수 있습니다."
+        },
+        "dislikes": {
+            "title": "싫어요 수 표시",
+            "description": "Return YouTube Dislike 커뮤니티 데이터를 사용해 대략적인 싫어요 수를 표시합니다. 정보를 가져오느라 로딩이 느려질 수 있습니다."
+        },
+        "unlock_resolution": {
+            "title": "해상도 제한 해제",
+            "description": "모니터 해상도 제한을 없애고 더 높은 해상도로 영상을 볼 수 있습니다. 변경 후 재시작해야 합니다."
+        },
+        "remove_super_resolution": {
+            "title": "저화질 영상의 초고해상도 화질 제거",
+            "description": "저화질 영상에 표시되는 AI 업스케일 “초고해상도” 화질을 제거합니다."
+        },
+        "hardware_decoding": {
+            "title": "하드웨어 디코딩",
+            "description": "가능한 경우 GPU로 동영상을 디코딩합니다. 끄면 재생 문제를 해결할 수 있지만 CPU에 따라 끊김이 생길 수 있습니다. 변경 후 재시작해야 합니다."
+        },
+        "wayland_hdr": {
+            "title": "Wayland HDR",
+            "description": "Wayland에서 HDR을 사용합니다. 지원되지 않는 플랫폼에서는 색이 바래 보일 수 있습니다. 변경 후 재시작해야 합니다."
+        },
+        "hide_shorts": {
+            "title": "Shorts 숨기기",
+            "description": "YouTube 홈 화면에서 Shorts를 숨깁니다."
+        },
+        "userstyles": {
+            "enable": "사용자 CSS 사용",
+            "description": "사용자 스타일 폴더에 .css 파일을 넣어 화면을 꾸밉니다. 변경 사항은 자동으로 적용됩니다."
+        },
+        "controller_support": {
+            "title": "게임 컨트롤러 지원",
+            "description": "Xbox 컨트롤러와 같은 외부 컨트롤러로 메뉴 탐색과 재생을 조작합니다."
+        },
+        "touch_overlay": {
+            "title": "터치 조작 표시",
+            "description": "터치 입력이 감지되면 화면에 조작 버튼을 표시합니다."
+        },
+        "low_memory_mode": {
+            "title": "저메모리 모드",
+            "description": "저사양 기기의 성능을 높일 수 있도록 YouTube의 저메모리 모드를 사용합니다. 일부 시각 효과가 줄어들며 변경 후 재시작해야 합니다."
+        },
+        "h264ify": {
+            "enable_title": "코덱 필터 사용 (h264ify)",
+            "enable_description": "코덱 필터를 사용합니다. 저사양 기기의 성능과 배터리 사용 시간을 개선할 수 있지만 선택 가능한 해상도가 줄어들 수 있습니다."
+        },
+        "features": {
+            "title": "기능",
+            "notice_title": "기본 기능에 포함되지 않음",
+            "notice_description": "선택 기능은 일반적인 YouTube TV 환경을 확장합니다. YouTube 내부 동작에 의존하므로 예고 없이 변경되거나 작동하지 않을 수 있습니다.",
+            "enable_title": "선택 기능 사용",
+            "enable_description": "이 기능은 HomeTube의 기본 환경에 포함되지 않으며 변경되거나 작동하지 않을 수 있음을 확인합니다."
+        },
+        "guide_tabs": {
+            "title": "가이드 탭",
+            "description": "사이드바에 표시할 탭을 선택합니다. 변경 후 HomeTube를 다시 시작하세요."
+        },
+        "language": {
+            "title": "언어",
+            "description": "HomeTube에서 사용할 언어를 선택합니다.",
+            "current": "현재 언어",
+            "system": "시스템 기본값",
+            "ko": "한국어",
+            "en": "영어",
+            "korean": "한국어",
+            "english": "영어",
+            "selected": "현재 선택됨",
+            "restart": "언어를 변경한 뒤 HomeTube를 다시 실행하세요."
+        }
+    }
+}

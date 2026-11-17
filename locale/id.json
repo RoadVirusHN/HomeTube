@@ -7,8 +7,8 @@
     "settings": {
         "generic": {
             "title": "Pengaturan",
-            "description": "Buka menu pengaturan VacuumTube. Akses menu ini dengan menekan Ctrl+O pada papan ketik.",
-            "button_label": "Buka Pengaturan VacuumTube",
+            "description": "Buka menu pengaturan HomeTube. Akses menu ini dengan menekan Ctrl+O pada papan ketik.",
+            "button_label": "Buka Pengaturan HomeTube",
             "hint": "Gunakan tombol panah untuk menjelajah"
         },
         "adblock": {
@@ -21,7 +21,7 @@
         },
         "dearrow": {
             "title": "DeArrow",
-            "description": "Mengganti judul dan gambar pratinjau video yang lebih akurat dan tidak sensasional dari basis data publik yang dihimpun bersama. Proses pengambilan informasi akan memperlambat pemuatan aplikasi VacuumTube."
+            "description": "Mengganti judul dan gambar pratinjau video yang lebih akurat dan tidak sensasional dari basis data publik yang dihimpun bersama. Proses pengambilan informasi akan memperlambat pemuatan aplikasi HomeTube."
         },
         "dislikes": {
             "title": "Kembalikan 'Tidak Suka'",
@@ -45,15 +45,15 @@
         },
         "fullscreen": {
             "title": "Mode Layar Penuh",
-            "description": "Memastikan VacuumTube selalu masuk dalam mode layar penuh setelah diluncurkan."
+            "description": "Memastikan HomeTube selalu masuk dalam mode layar penuh setelah diluncurkan."
         },
         "keep_on_top": {
             "title": "Tetap di Atas",
-            "description": "Memastikan jendela VacuumTube selalu berada di atas jendela aplikasi lain."
+            "description": "Memastikan jendela HomeTube selalu berada di atas jendela aplikasi lain."
         },
         "userstyles": {
             "title": "Kustomisasi CSS (Userstyles)",
-            "description": "Letakkan file .css kustom pada direktori userstyles untuk mengubah tampilan VacuumTube. Perubahan akan dimuat otomatis.",
+            "description": "Letakkan file .css kustom pada direktori userstyles untuk mengubah tampilan HomeTube. Perubahan akan dimuat otomatis.",
             "warn_empty": "CSS tidak ditemukan",
             "open_folder": "Buka Direktori Userstyles",
             "enable": "Aktifkan Userstyles",
@@ -70,7 +70,7 @@
     "donate_unused": {
         "setting": {
             "title": "Mari Berdonasi",
-            "description": "Dukung pengembangan VacuumTube dengan berdonasi ke shy.rocks/donate. Tekan tombol berikut untuk membuka situs donasi di peramban Anda.",
+            "description": "Dukung pengembangan HomeTube dengan berdonasi ke shy.rocks/donate. Tekan tombol berikut untuk membuka situs donasi di peramban Anda.",
             "button_label": "Beri Donasi"
         }
     }

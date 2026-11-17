@@ -26,11 +26,11 @@
         },
         "fullscreen": {
             "title": "Cijeli Zaslon",
-            "description": "Omogućava cijeli zaslon i čini da se VacuumTube uvijek pokrene u punom zaslonu."
+            "description": "Omogućava cijeli zaslon i čini da se HomeTube uvijek pokrene u punom zaslonu."
         },
         "keep_on_top": {
             "title": "Ostani na vrhu",
-            "description": "Omogućuje opciju \"Ostani na vrhu\" i pokreće VacuumTube s prozorom usidrenim preko svakog drugog prozora."
+            "description": "Omogućuje opciju \"Ostani na vrhu\" i pokreće HomeTube s prozorom usidrenim preko svakog drugog prozora."
         },
         "userstyles": {
             "title": "Prilagođeni CSS (korisnički stilovi)",

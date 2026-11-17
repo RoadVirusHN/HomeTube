@@ -37,7 +37,8 @@ module.exports = (locale) => [
                 id: 'behavior',
                 rows: [
                     { type: 'toggle', key: 'pause_on_blur' },
-                    { type: 'toggle', key: 'default_guest_mode' }
+                    { type: 'toggle', key: 'default_guest_mode' },
+                    { type: 'link', page: 'language', title: locale.language.title, description: locale.language.description }
                 ]
             },
             {
@@ -115,7 +116,7 @@ module.exports = (locale) => [
             {
                 id: 'devices',
                 rows: [
-                    { type: 'toggle', key: 'device_discoverability' },
+                    { type: 'link', page: 'remote', title: locale.remote.title, description: locale.remote.description },
                     { type: 'link', page: 'mac_permissions', title: locale.mac_permissions.title, hide: process.platform !== 'darwin' }
                 ]
             }

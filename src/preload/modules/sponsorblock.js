@@ -166,7 +166,7 @@ module.exports = async () => {
         console.log('[SponsorBlock] Skipping sponsor segment')
 
         activeVideo.currentTime = matchingSegment[0].endTime;
-        ui.toast('VacuumTube', locale.sponsorblock[`${matchingSegment[0].category}_skipped`])
+        ui.toast('HomeTube', locale.sponsorblock[`${matchingSegment[0].category}_skipped`])
     }
 
     const onNavigate = () => {

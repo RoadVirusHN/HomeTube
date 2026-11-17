@@ -1,4 +1,4 @@
-//injects custom VacuumTube settings button into the youtube settings page (and removes an irrelevant option from youtube settings)
+//injects custom HomeTube settings button into the youtube settings page (and removes an irrelevant option from youtube settings)
 
 const { shell } = require('electron')
 const configManager = require('../config')
@@ -109,7 +109,7 @@ module.exports = async () => {
                 category.items = category.items.filter(c => c.settingReadOnlyItemRenderer?.itemId !== 'ABOUT_OPEN_SOURCE_LICENSES') //this line looks really bad out of context
             }
 
-            if (isKids) return json; //don't show VacuumTube settings/donate in youtube kids
+            if (isKids) return json; //don't show HomeTube settings/donate in youtube kids
 
             json.items[0].settingCategoryCollectionRenderer.title = { //doesn't have a label by default
                 runs: [
@@ -117,11 +117,11 @@ module.exports = async () => {
                 ]
             }
 
-            //VacuumTube entry point
+            //HomeTube entry point
             json.items.unshift(
                 {
                     settingCategoryCollectionRenderer: {
-                        categoryId: 'SETTINGS_CAT_VACUUMTUBE_OVERLAY',
+                        categoryId: 'SETTINGS_CAT_HOMETUBE_OVERLAY',
                         focused: false,
                         items: [
                             createSettingButtonRenderer(
@@ -148,7 +148,7 @@ module.exports = async () => {
                         ],
                         title: {
                             runs: [
-                                { text: 'VacuumTube' }
+                                { text: 'HomeTube' }
                             ]
                         }
                     }

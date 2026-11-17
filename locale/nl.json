@@ -26,11 +26,11 @@
         },
         "fullscreen": {
             "title": "Vollescherm",
-            "description": "Schakelt volledig scherm in en zorgt ervoor dat VacuumTube altijd opstart in volledig scherm."
+            "description": "Schakelt volledig scherm in en zorgt ervoor dat HomeTube altijd opstart in volledig scherm."
         },
         "keep_on_top": {
             "title": "Bovenaan houden",
-            "description": "Schakelt \"Bovenaan houden\" in en zorgt ervoor dat VacuumTube wordt gestart met het venster boven elk ander venster vastgepind."
+            "description": "Schakelt \"Bovenaan houden\" in en zorgt ervoor dat HomeTube wordt gestart met het venster boven elk ander venster vastgepind."
         },
         "userstyles": {
             "title": "Aangepaste CSS (gebruikersstijlen)",

@@ -7,6 +7,7 @@
         "start": "electron .",
         "test": "node --test",
         "windows:build": "electron-builder --win",
+        "windows:build-portable": "electron-builder --win zip --x64",
         "mac:build": "electron-builder --mac",
         "linux:build": "electron-builder --linux",
         "linux:build-unpacked": "electron-builder --linux --dir",
@@ -18,15 +19,15 @@
     "desktopName": "rocks.shy.VacuumTube",
     "build": {
         "appId": "rocks.shy.VacuumTube",
-        "productName": "VacuumTube",
-        "artifactName": "VacuumTube-${arch}.${ext}",
+        "productName": "HomeTube",
+        "artifactName": "HomeTube-${arch}.${ext}",
         "linux": {
             "icon": "./assets/icon.svg",
             "synopsis": "Watch and explore videos on YouTube",
             "category": "AudioVideo",
             "desktop": {
                 "entry": {
-                    "Name": "VacuumTube",
+                    "Name": "HomeTube",
                     "Type": "Application",
                     "Categories": "AudioVideo;",
                     "Keywords": "YouTube;YT;"
@@ -60,7 +61,7 @@
         },
         "win": {
             "icon": "./assets/icon.ico",
-            "artifactName": "VacuumTube-${arch}-Portable.zip",
+            "artifactName": "HomeTube-${arch}-Portable.zip",
             "target": [
                 {
                     "target": "nsis",
@@ -79,8 +80,8 @@
             ]
         },
         "nsis": {
-            "artifactName": "VacuumTube-Setup.${ext}",
-            "uninstallDisplayName": "VacuumTube",
+            "artifactName": "HomeTube-Setup.${ext}",
+            "uninstallDisplayName": "HomeTube",
             "oneClick": false,
             "allowToChangeInstallationDirectory": true,
             "allowElevation": true,
@@ -107,7 +108,7 @@
             "entitlements": "build/entitlements.mac.plist",
             "entitlementsInherit": "build/entitlements.mac.inherit.plist",
             "extendInfo": {
-                "NSMicrophoneUsageDescription": "VacuumTube uses the microphone only when you use YouTube voice search."
+                "NSMicrophoneUsageDescription": "HomeTube uses the microphone only when you use YouTube voice search."
             },
             "target": [
                 {
@@ -149,6 +150,8 @@
     "dependencies": {
         "chokidar": "^6.0.0",
         "electron-updater": "^6.8.11",
-        "string-argv": "^0.3.2"
+        "qrcode": "^1.5.4",
+        "string-argv": "^0.3.2",
+        "ws": "^8.22.1"
     }
 }

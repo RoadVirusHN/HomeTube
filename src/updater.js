@@ -35,8 +35,9 @@ function detectInstallation({
     if (!isPackaged) return { type: 'development', canAutoUpdate: false };
 
     if (platform === 'win32') {
-        const uninstaller = path.win32.join(path.win32.dirname(exePath), 'Uninstall VacuumTube.exe')
-        const installed = existsSync(uninstaller)
+        const installDirectory = path.win32.dirname(exePath)
+        const installed = existsSync(path.win32.join(installDirectory, 'Uninstall HomeTube.exe'))
+            || existsSync(path.win32.join(installDirectory, 'Uninstall VacuumTube.exe'))
         return {
             type: installed ? 'installer' : 'portable',
             canAutoUpdate: installed

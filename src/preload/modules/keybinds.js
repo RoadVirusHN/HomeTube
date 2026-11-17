@@ -68,7 +68,7 @@ module.exports = async () => {
             e.preventDefault()
             e.stopImmediatePropagation()
             navigator.clipboard.writeText(url)
-            ui.toast('VacuumTube', locale.general.video_copied)
+            ui.toast('HomeTube', locale.general.video_copied)
         }
     }, true)
 

@@ -93,7 +93,7 @@ module.exports = {
     id: 'about',
 
     icon: iconDataUrl,
-    title: 'VacuumTube',
+    title: 'HomeTube',
     crumb: (locale) => locale.about.title,
     description: (locale) => locale.about.description,
     badge: (locale) => state.currentVersion && fill(locale.about.version, { version: state.currentVersion }),

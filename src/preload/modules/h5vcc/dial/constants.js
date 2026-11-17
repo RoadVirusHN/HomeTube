@@ -13,7 +13,7 @@ module.exports = {
     address: '239.255.255.250',
     port: 1900,
     osAgent: `${os.platform()}/${os.release()}`,
-    appAgent: `VacuumTube/${package.version}`,
+    appAgent: `HomeTube/${package.version}`,
     hostname,
     uuid: () => {
         try {

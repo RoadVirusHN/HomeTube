@@ -32,8 +32,8 @@ function buildDeviceDesc(base) {
         el('URLBase', base),
         el('device', [
             el('deviceType', 'urn:dial-multiscreen-org:device:dial:1'),
-            el('friendlyName', `${constants.hostname} (VacuumTube)`),
-            el('manufacturer', 'VacuumTube'),
+            el('friendlyName', `${constants.hostname} (HomeTube)`),
+            el('manufacturer', 'HomeTube'),
             el('modelName', package.version),
             el('UDN', `uuid:${constants.uuid()}`)
         ])

@@ -1,220 +1,84 @@
-# VacuumTube
-<p>
-    <a href="https://github.com/shy1132/VacuumTube/stargazers">
-      <img alt="Stars" title="Stars" src="https://img.shields.io/github/stars/shy1132/VacuumTube?style=shield&label=%E2%AD%90%20Stars&branch=main&kill_cache=1%22" />
-    </a>
-    <a href="https://github.com/shy1132/VacuumTube/releases/latest">
-      <img alt="Latest Release" title="Latest Release" src="https://img.shields.io/github/v/release/shy1132/VacuumTube?style=shield&label=%F0%9F%9A%80%20Release">
-    </a>
-    <a href="https://klausenbusk.github.io/flathub-stats/#ref=rocks.shy.VacuumTube&interval=infinity&downloadType=installs%2Bupdates">
-      <img alt="Flathub Downloads" title="Flathub Downloads" src="https://img.shields.io/badge/dynamic/json?color=informational&label=Downloads&logo=flathub&logoColor=white&query=%24.installs_total&url=https%3A%2F%2Fflathub.org%2Fapi%2Fv2%2Fstats%2Frocks.shy.VacuumTube">
-    </a>
-    <a href="https://github.com/shy1132/VacuumTube/blob/main/LICENSE">
-      <img alt="License" title="License" src="https://img.shields.io/github/license/shy1132/VacuumTube?label=%F0%9F%93%9C%20License" />
-    </a>
-</p>
+# HomeTube
 
-VacuumTube is an unofficial wrapper of YouTube Leanback (the console and Smart TV version of YouTube) for the desktop, with a built-in adblocker and minor enhancements.
+HomeTube는 집 안의 TV나 큰 모니터에서 YouTube Leanback 화면을 띄우고, 같은 로컬 Wi-Fi에 연결된 스마트폰 브라우저를 리모컨으로 사용하는 개인용 데스크톱 앱입니다. 영상은 컴퓨터에서 재생되며 휴대폰으로 전송되지 않습니다.
 
-## What exactly is this?
+이 저장소는 [VacuumTube](https://github.com/shy1132/VacuumTube)를 기반으로 한 개인용 수정 프로젝트입니다. HomeTube는 별도의 YouTube 클라이언트나 공식 Google 제품이 아닙니다. YouTube Leanback 화면과 VacuumTube의 Electron 앱 구조를 유지하면서 스마트폰 리모컨과 페어링 기능 등을 추가했습니다. YouTube 및 관련 상표의 권리는 각 권리자에게 있습니다.
 
-It is **not** a custom client, YouTube Leanback is an official interface. This project simply encompasses it and makes it usable as a standalone desktop application.
+이 프로젝트를 만든 이유는 가족이 TV 화면을 스마트폰으로 편하게 조작하도록 하기 위해서입니다. 대중적인 배포나 기술적 성취를 목표로 하지 않습니다. 기능과 설치 절차는 개인 환경에 맞춰져 있으며, 다른 환경에서 동작을 보장하지 않습니다.
 
-YouTube Leanback is just an HTML5 app, and so you *can* just use it in your browser by going to https://www.youtube.com/tv, but they intentionally block browsers unless it's one of their console or TV apps.
+## 설치 및 실행
 
-You can technically bypass this by spoofing your user agent, but it isn't the same experience you'd get on a console or TV as it doesn't support controllers outside of the official app, and it's just a much more involved process to get it working.
+현재 이 저장소에는 공개 배포용 ZIP 링크가 없습니다. 직접 실행하거나 ZIP을 만들려면 Node.js와 npm이 필요합니다. 개발 환경은 Node.js 22 계열을 기준으로 합니다.
 
-VacuumTube solves all of this by wrapping it with Electron, pretending to be the YouTube app, implementing controller *and* touch support, and overall making it a much better experience than just spoofing your user agent.
+### 소스에서 실행
 
-If there's anything that you think makes it look lazy or half-baked, open an issue! The goal is to make it feel as official as possible, while also providing niceties like ad blocking, DeArrow and userstyles.
-
-## Installing
-
-### Windows
-
-If you don't know the difference, pick the Installer.
-
-- [Installer](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-Setup.exe)
-- Portable ZIP:
-  - [x64 / amd64](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-x64-Portable.zip)
-  - [Arm® 64](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-arm64-Portable.zip)
-
-### macOS
-
-Note that macOS builds are not yet signed, so they do not auto-update. For now, please periodically check for updates.
-
-- [Apple Silicon / M-series](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-arm64.dmg)
-- [Intel](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-x64.dmg)
-- [Universal](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-universal.dmg)
-
-### Linux
-
-In most cases, you very likely want to use the [Flatpak](https://flathub.org/apps/rocks.shy.VacuumTube), which works across all distributions and common architectures.
-
-Otherwise, you can use a distribution package or a portable one. If you don't know the difference, you likely want amd64.
-
-- amd64 / x86_64
-  - [AppImage](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-x86_64.AppImage)
-  - [Ubuntu/Debian/Mint (.deb)](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-amd64.deb)
-  - [tarball](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-x64.tar.gz)
-- Arm® 64 / aarch64
-  - [AppImage](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-arm64.AppImage)
-  - [Ubuntu/Debian/Mint (.deb)](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-arm64.deb)
-  - [tarball](https://github.com/shy1132/VacuumTube/releases/latest/download/VacuumTube-arm64.tar.gz)
- 
-## Settings
-
-VacuumTube has some settings that you can change, which are located in the YouTube settings. They can also be opened by pressing `Ctrl+O` on your keyboard.
-
-- Ad Block
-  - Seamlessly blocks video and feed ads, not subject to YouTube's methods of preventing blockers
-- SponsorBlock
-  - Automatically skips sponsored (and/or other) segments in videos based on a [community-contributed database](https://sponsor.ajay.app/)
-- DeArrow
-  - Replaces titles and thumbnails with more accurate, less sensationalized versions from a public crowdsourced database
-- Return Dislikes
-  - Uses community data from the [Return YouTube Dislike API](https://returnyoutubedislike.com) to show rough dislike counts
-- Block Continue Watching
-  - Blocks the "Video paused. Continue watching?" prompt that appears after being idle for a while
-- Remove Super Resolution
-  - Removes \"Super resolution\" (AI upscaled) qualities from low quality videos
-- Hide Shorts
-  - Hides YouTube Shorts from the homepage
-- Guide Tabs
-  - Allows you to choose which guide tabs are shown on the sidebar
-- Unlock Resolution
-  - Removes monitor resolution cap and allows you to watch videos at any resolution
-- Filter Video Codecs
-  - Allows you to block specific video codecs, forcing YouTube to pick an alternative. Similiar to [h264ify](https://github.com/erkserkserks/h264ify), but more powerful
-- Hardware Decoding
-  - Uses your GPU to decode videos when possible
-- Wayland HDR (Linux)
-  - Enables HDR on Wayland (Linux) platforms, but can cause desaturated colors on unsupported platforms. Requires up to date drivers and a compatible Wayland compositor. See [HDR - Arch Wiki](https://wiki.archlinux.org/title/HDR)
-- Low Memory Mode
-  - Tells YouTube to enable it's low memory mode
-- Fullscreen
-  - Enables fullscreen, and makes VacuumTube always launch in fullscreen
-- No Window Decorations
-  - Disables window decorations, including the title bar and window border
-- Keep on Top
-  - Enables Keep on Top, and makes VacuumTube launch with the window pinned on top of every other window
-- Pause on Blur
-  - Pause current video when VacuumTube loses focus (e.g. tabbing out or minimizing the window)
-- Features
-  - Contains extra experimental features that add extra functionality: **Music Mode**, **Show Remaining Time**, **Ultrawide Support**
-- Custom CSS (Userstyles)
-  - Enables injection of custom CSS styles. See the section below for more information
-- Touch Overlay
-  - Enables on-screen touch controls for easier navigation when touch input is detected
-- Controller Support
-  - Enables support for game controllers, including navigation and video playback controls. Requires an external controller, such as an Xbox controller. Can be turned off to avoid conflicting with apps like JoyToKey
-- Device Discoverability
-  - Allows VacuumTube to be discovered by the YouTube mobile app on devices within the same local network (DIAL)
-- Automatic Updates
-  - Download new versions in the background and install them when VacuumTube closes. When off, you can still check for updates from the About page
-
-## Extra Input Mappings
-
-VacuumTube exposes a few extra input mappings for actions that may be desired on a desktop:
-
-- `Ctrl+O`
-  - Open VacuumTube Settings
-- `Ctrl+Shift+C`
-  - Copy current video URL to clipboard
-- `Shift+Enter`
-  - Simulate long-press of the Enter key
-- `Right Click`
-  - Go back
-- `+` or `Start`
-  - Increase volume
-- `-` or `Select`
-  - Decrease volume
-- `M` or `L3`
-  - Toggle mute
-- `P`
-  - Toggle playback speed modification
-- `D`
-  - Increase playback speed
-- `A`
-  - Decrease playback speed
-- `C`
-  - Toggle captions
-
-## Custom CSS (Userstyles)
-
-You can apply custom styles to VacuumTube by first enabling it in the settings, and then creating `.css` files in the userstyles folder. They can then be managed in VacuumTube settings. You can access the developer tools by pressing **Ctrl+Shift+I**, which are extremely helpful when writing custom CSS.
-
-The userstyles folder is located in the config folder mentioned below.
-
-## VacuumTube Flags
-
-- `--version`/`-v`
-  - Prints current version and exits
-- `--portable`/`-p`
-  - Operates VacuumTube in portable mode, setting data directory to the one you specify, or defaulting to `data` in the executable directory (you can also create `portable.txt` in the executable directory, which works in the same way)
-- `--fullscreen`
-  - Forces VacuumTube to open in fullscreen
-- `--no-window-decorations`
-  - Opens VacuumTube with hidden window decorations
-- `--enable-devtools`
-  - Opens VacuumTube with the Chromium developer tools open
-- `--debug-gpu`
-  - Opens chrome://gpu in VacuumTube, helpful for debugging issues
-- `[url]` or `--deeplink [url]`
-  - Opens a specific YouTube URL within Leanback. You'll be prompted to choose an account before the URL is opened.
-  - If VacuumTube is already open, the URL is opened in the existing instance instead
-  - The `https://` part is optional
-  - The `youtube.com/` also is optional
-  - `youtu.be` links work too
-  - The smallest form is pure query parameters, like `v=Something` 
-  - `vacuumtube 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' --fullscreen`
-  - `vacuumtube --fullscreen 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'`
-  - `vacuumtube --fullscreen 'youtube.com/watch?v=dQw4w9WgXcQ'`
-  - `vacuumtube --fullscreen 'watch?v=dQw4w9WgXcQ'`
-  - `vacuumtube --fullscreen 'v=dQw4w9WgXcQ'`
-  - `vacuumtube --deeplink 'https://youtu.be/dQw4w9WgXcQ'`
-  - If using the Flatpak, you should swap `vacuumtube (args)` for `flatpak run rocks.shy.VacuumTube -- (args)`.
-  - Flags VacuumTube doesn't know about (like Chromium flags) take the argument right after them as their value. To make sure a URL is always picked up, use `--deeplink`, put it after `--` (e.g. `vacuumtube --fullscreen -- 'v=dQw4w9WgXcQ'`), or give other flags their value with `=` (e.g. `--ozone-platform=wayland`)
-
-## Chromium Flags
-
-You can provide extra command line flags to Chromium via the `flags.txt` file located in the config folder.
-
-For example, putting `--disable-gpu` into the `flags.txt` file will cause VacuumTube to run with the GPU disabled. You can find more flags by searching for Chromium command line flags, but you likely won't need to mess with this.
-
-Flags that take a value can be written as either `--name=value` or `--name value` (e.g. `--ozone-platform=wayland` or `--ozone-platform wayland`).
-
-## Config Folder
-
-Your config folder is located at:
-
-- **Windows**: `%APPDATA%\VacuumTube\`
-- **macOS**: `~/Library/Application Support/VacuumTube/`
-- **Linux**: `~/.config/VacuumTube/`
-- **Linux (Flatpak)**: `~/.var/app/rocks.shy.VacuumTube/config/VacuumTube/`
-- **Portable (Default)**: `(executable directory)\data\`
-
-## Building from Source
-
-You should always clone from the latest release tag, since latest commit may contain incomplete features and bugs.
-
-Builds will be created in the dist/ folder.
+1. 이 저장소를 내려받거나 복제합니다.
+2. 저장소 폴더에서 의존성을 설치하고 앱을 실행합니다.
 
 ```sh
-git clone https://github.com/shy1132/VacuumTube
-cd VacuumTube
-
-# Install Dependencies
-npm i
-
-# Run without packaging
-npm run start
-
-# Run the automated tests
-npm test
-
-# Or package builds for your operating system
-npm run windows:build
-npm run mac:build
-npm run linux:build(-unpacked,-appimage)
+npm install
+npm start
 ```
+
+### Windows portable ZIP 만들기
+
+아래 명령은 Electron Builder로 Windows x64용 ZIP만 만듭니다. NSIS 설치 프로그램은 만들지 않습니다. 결과물은 `dist/HomeTube-x64-Portable.zip`입니다.
+
+```sh
+npm install
+npx electron-builder --win zip --x64
+```
+
+같은 명령을 짧게 실행하는 npm 별칭도 있습니다.
+
+```sh
+npm run windows:build-portable
+```
+
+받은 사람은 ZIP을 원하는 위치에 압축 해제한 뒤 안에 있는 `HomeTube.exe`를 실행하면 됩니다. 설치 프로그램을 실행하거나 별도로 설치할 필요가 없습니다. Windows용 결과물은 Windows 호스트에서 빌드하고 실행 확인하는 것을 권장합니다. Linux 컨테이너에서 Windows 타깃을 빌드할 때는 Wine 등 Windows 빌드 도구가 필요할 수 있습니다. [Electron Builder의 Windows 교차 빌드 안내](https://www.electron.build/docs/features/multi-platform-build/)를 참고하세요.
+
+### Windows portable ZIP 다운로드
+
+빌드한 ZIP이 GitHub에 자동으로 올라가지는 않습니다. 저장소의 **Releases → Draft a new release**에서 릴리스를 만들고, `dist/HomeTube-x64-Portable.zip` 파일을 첨부해 공개해야 합니다. GitHub가 저장소의 Code 메뉴에서 제공하는 Source code ZIP은 실행 파일이 아니므로 별도로 첨부해야 합니다.
+
+릴리스를 공개한 뒤 아래 주소에서 `<OWNER>/<REPO>`를 실제 GitHub 계정과 저장소 이름으로 바꾸면, 사용자는 이 링크를 눌러 바로 ZIP을 받을 수 있습니다. 새 릴리스마다 같은 이름의 ZIP을 첨부하면 `latest` 링크는 최신 릴리스 파일을 가리킵니다.
+
+```text
+https://github.com/<OWNER>/<REPO>/releases/latest/download/HomeTube-x64-Portable.zip
+```
+
+저장소를 만들고 실제 주소가 정해지면 이 주소를 README의 다운로드 링크로 연결하면 됩니다. GitHub Release에 첨부하기 위해서는 배포하는 사람이 빌드한 ZIP을 한 번 선택해야 하지만, 다운로드하는 사람은 `dist/` 폴더에 접근할 필요가 없습니다.
+
+## 스마트폰 리모컨 사용법
+
+1. 컴퓨터에서 HomeTube를 실행하고 설정을 엽니다. 기본 단축키는 `Ctrl+O`입니다.
+2. **조작 및 기기 → HomeTube Remote**로 이동합니다.
+3. 리모컨 서버를 시작하고 표시되는 페어링 QR 코드를 스마트폰 카메라로 스캔합니다. 컴퓨터와 휴대폰은 같은 로컬 Wi-Fi에 연결되어야 합니다.
+4. 열린 리모컨 페이지에서 휴대폰 이름을 확인하고 연결을 완료합니다. 방향키, 선택, 뒤로, 홈, 재생 및 음량 버튼을 사용할 수 있습니다.
+5. 이미 연결된 휴대폰은 HomeTube 설정의 **리모컨 페이지 QR 코드**를 스캔해 리모컨 페이지를 다시 열 수 있습니다. 기기별 **해제하기** 버튼으로 등록을 해제할 수 있습니다.
+
+HomeTube가 직접 표시하는 설정·안내 문구의 언어는 **일반 → 동작 → 언어**에서 시스템 기본값, 한국어, 영어 중 선택할 수 있습니다. 바꾼 언어는 HomeTube를 다시 실행한 뒤 적용됩니다. 기본값은 시스템 로케일이 한국어이면 한국어, 그 외에는 영어입니다. 이 선택은 YouTube Leanback 자체 메뉴에는 적용되지 않습니다. YouTube는 자체 언어 설정을 사용하므로 Leanback의 **설정 → 언어**에서 별도로 바꾸세요. [YouTube 언어 설정 안내](https://support.google.com/youtube/answer/87604)
+
+페어링 화면은 별도 데스크톱 창으로 열립니다. 창을 닫으려면 해당 창의 닫기 버튼을 사용하세요. 페어링 화면이 다른 창 뒤에 가려지면 데스크톱에서 창을 선택해야 할 수 있습니다.
+
+### 네트워크와 보안
+
+리모컨은 로컬 네트워크 안에서 HTTP 및 WebSocket을 사용합니다. 트래픽은 암호화되지 않으므로 신뢰할 수 있는 개인 Wi-Fi에서만 사용하세요. 같은 네트워크의 제3자가 통신을 관찰할 수 있습니다. Windows 방화벽에서는 개인 네트워크 접근만 허용하고, 라우터 포트 포워딩은 설정하지 마세요. 외부 인터넷을 통한 원격 접속용으로 설계되지 않았습니다.
+
+## 기반 프로젝트와 변경 범위
+
+기반 프로젝트인 VacuumTube는 Electron으로 YouTube Leanback/TV 인터페이스를 데스크톱 앱에서 실행하는 프로젝트입니다. HomeTube는 이를 새 플레이어나 일반 YouTube 웹사이트로 바꾸지 않고 기존 앱과 Leanback 사용 방식을 기반으로 합니다. 이 저장소의 주요 추가 작업은 로컬 네트워크 리모컨 서버, 휴대폰 페어링 및 기기 관리, 모바일 웹 리모컨, HomeTube용 설정 화면과 제품명 조정입니다.
+
+HomeTube라는 이름은 이 개인 수정본에서 사용하는 이름입니다. 기반 프로젝트의 코드, 라이선스 고지, 저작권 표시를 제거하거나 기반 프로젝트의 공식 배포물인 것처럼 표현하지 않습니다. 변경된 앱 식별자나 이름이 모든 내부 메타데이터와 플랫폼 통합에서 완전히 분리되었다고 보장하지 않습니다.
+
+## 코드 작성 방식
+
+기반이 되는 VacuumTube 코드를 제외하고, 이 프로젝트에서 추가하거나 수정한 구현은 전부 대화형 생성형 AI를 이용한 바이브 코딩 방식으로 작성했습니다. 코드를 직접 한 줄씩 작성하는 전통적인 개발 방식으로 만든 프로젝트라고 주장하지 않습니다. 사용자가 요구사항을 설명하고 실제 기기에서 동작을 확인했으며, 구현과 수정은 AI와의 대화를 통해 진행했습니다. 따라서 코드에는 오류나 보안상 결함이 있을 수 있고, 사용 전 검토가 필요합니다.
+
+## 저작권 및 라이선스
+
+이 저장소의 `LICENSE` 파일은 MIT License이며, 그 파일에 적힌 저작권 표시와 조건을 함께 적용해야 합니다. MIT 라이선스는 저작권을 없애거나 저작권자를 바꾸는 뜻이 아닙니다. 원본 VacuumTube에서 온 코드와 그 저작권·라이선스 고지는 그대로 존중해야 합니다. 이 수정본의 README나 이름 변경만으로 원본 저작권이 HomeTube 제작자에게 이전되지는 않습니다.
+
+앱은 Electron 및 여러 제3자 패키지를 사용하며 각 구성 요소에는 별도의 라이선스와 고지가 적용될 수 있습니다. 재배포할 경우 해당 라이선스와 고지를 확인하고 보존하세요. 이 README는 법률 자문이 아니며, 재배포 권리나 상표 사용 권한을 보증하지 않습니다.
+
+YouTube 서비스와 Leanback의 이용에는 Google/YouTube의 약관과 정책이 적용됩니다. 이 프로젝트는 Google 또는 YouTube와 제휴·승인 관계가 아닙니다. 서비스 동작이나 향후 호환성을 보장하지 않습니다.

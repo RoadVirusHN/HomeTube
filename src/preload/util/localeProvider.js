@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const functions = require('./functions')
+const configManager = require('../config')
 
 const localeFolder = path.join(__dirname, '../', '../', '../', 'locale')
 
@@ -34,28 +35,26 @@ function languageName(code) {
     }
 }
 
-functions.waitForCondition(() => !!window.ytcfg)
-.then(async () => {
-    const lang = window.ytcfg.data_.HL;
-    const broadLang = lang.split('-')[0]
+Promise.resolve().then(async () => {
+    // Settings language follows the computer/browser locale, not the YouTube
+    // account language. The app currently supports Korean and English only.
+    const systemLocale = Intl.DateTimeFormat().resolvedOptions().locale || navigator.language || 'en'
+    const requestedLanguage = configManager.get().ui_language
+    const language = requestedLanguage === 'ko' || requestedLanguage === 'en'
+        ? requestedLanguage
+        : /^ko(?:[-_]|$)/i.test(systemLocale) ? 'ko' : 'en'
 
     const localeFiles = await fs.promises.readdir(localeFolder)
 
     const baseLocaleStr = await fs.promises.readFile(path.join(localeFolder, 'en.json'), 'utf-8')
     const baseLocale = JSON.parse(baseLocaleStr)
 
-    let langFile = null;
-    if (localeFiles.includes(`${lang}.json`)) {
-        langFile = `${lang}.json`
-    } else if (localeFiles.includes(`${broadLang}.json`)) {
-        langFile = `${broadLang}.json`
-    }
+    const langFile = localeFiles.includes(`${language}.json`) ? `${language}.json` : null
 
     const str = await fs.promises.readFile(path.join(localeFolder, langFile || 'en.json'), 'utf-8')
     const partialLocale = JSON.parse(str)
 
-    const language = langFile ? langFile.replace('.json', '') : broadLang;
-    const missing = broadLang === 'en' ? 0 : countMissing(baseLocale, langFile ? partialLocale : {})
+    const missing = language === 'en' ? 0 : countMissing(baseLocale.settings, partialLocale.settings || {})
 
     translation = {
         language,
@@ -65,7 +64,7 @@ functions.waitForCondition(() => !!window.ytcfg)
     }
 
     locale = functions.deepMerge(baseLocale, partialLocale)
-})
+}).catch((error) => console.error('[locale] Failed to load locale', error))
 
 async function waitUntilAvailable() {
     await functions.waitForCondition(() => !!locale)

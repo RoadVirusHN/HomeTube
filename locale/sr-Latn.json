@@ -26,11 +26,11 @@
         },
         "fullscreen": {
             "title": "Ceo Ekran",
-            "description": "Omogućava ceo ekran i čini da VacuumTube uvek radi u režimu celog ekrana."
+            "description": "Omogućava ceo ekran i čini da HomeTube uvek radi u režimu celog ekrana."
         },
         "keep_on_top": {
             "title": "Ostani na vrhu",
-            "description": "Omogućava opciju „Ostani na vrhu“ i pokreće VacuumTube sa prozorom pričvršćenim preko svakog drugog prozora."
+            "description": "Omogućava opciju „Ostani na vrhu“ i pokreće HomeTube sa prozorom pričvršćenim preko svakog drugog prozora."
         },
         "userstyles": {
             "title": "Prilagođeni CSS (korisnički stilovi)",

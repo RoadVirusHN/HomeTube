@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title id="page-title">HomeTube Pairing</title>
+    <link rel="stylesheet" href="desktop.css">
+    <script src="desktop.js" defer></script>
+</head>
+<body>
+    <main>
+        <button id="close" class="close-button" type="button"></button>
+        <header>
+            <p class="eyebrow">HOMETUBE</p>
+            <h1 id="heading"></h1>
+            <p id="intro" class="intro"></p>
+        </header>
+        <section class="pairing card" id="pairing" hidden>
+            <img id="qr">
+            <p id="pairing-label" class="label"></p>
+            <p id="code" class="code"></p>
+            <p id="expires" class="muted"></p>
+            <p id="address" class="address"></p>
+        </section>
+        <section id="stopped" class="card" hidden>
+            <p id="stopped-title" class="status"></p>
+            <p id="stopped-detail" class="muted"></p>
+        </section>
+        <section class="card devices-card">
+            <div class="status-line"><span id="dot" class="dot"></span><strong id="count">연결된 휴대폰 0대</strong></div>
+            <ul id="devices"></ul>
+        </section>
+        <p id="notice" class="notice"></p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#111111">
+    <title>HomeTube 리모컨 연결</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/remote.js" defer></script>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>HomeTube <span>· TV 리모컨</span></h1>
+        </header>
+        <section id="controls" class="remote-controls" aria-label="TV 탐색 리모컨" hidden>
+            <div class="dpad" aria-label="방향키">
+                <button id="connection-status" class="status-button disconnected" type="button" aria-haspopup="dialog" aria-controls="connection-dialog" aria-live="polite"><span id="status-dot" class="dot"></span><span id="status">연결 안 됨</span></button><button type="button" data-command="UP" aria-label="위">▲</button><button class="home-button" type="button" data-command="HOME"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8v10h-6v-6H9v6H3z"/></svg><span>홈</span></button>
+                <button type="button" data-command="LEFT" aria-label="왼쪽">◀</button>
+                <button type="button" data-command="SELECT" aria-label="선택">선택</button>
+                <button type="button" data-command="RIGHT" aria-label="오른쪽">▶</button>
+                <span></span><button type="button" data-command="DOWN" aria-label="아래">▼</button><button class="back-button" type="button" data-command="BACK"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5-7 7 7 7M3 12h18"/></svg><span>뒤로</span></button>
+            </div>
+            <div class="playback-controls" aria-label="재생 조작">
+                <button type="button" data-command="SEEK_BACK"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36L3 8.3M3 4v4.3h4.3M12 7v5l3 2"/></svg><span>10초 뒤로</span></button>
+                <button type="button" data-command="PLAY_PAUSE"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16l12-8z"/><path d="M19 6v12m3-12v12"/></svg><span>재생 / 정지</span></button>
+                <button type="button" data-command="SEEK_FORWARD"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36L21 8.3M21 4v4.3h-4.3M12 7v5l-3 2"/></svg><span>10초 앞으로</span></button>
+                <button type="button" data-command="VOLUME_DOWN"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4zM17 12h5"/></svg><span>음량 낮춤</span></button>
+                <button type="button" data-command="MUTE"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4zM17 9l5 6m0-6-5 6"/></svg><span>음소거</span></button>
+                <button type="button" data-command="VOLUME_UP"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4zM17 9a5 5 0 0 1 0 6m2-9a9 9 0 0 1 0 12"/></svg><span>음량 높임</span></button>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="connection-dialog" class="modal">
+        <form method="dialog" class="modal-close-form"><button class="close-button" aria-label="닫기">닫기</button></form>
+        <h2>연결 관리</h2>
+        <p id="connection-detail">같은 Wi-Fi에 연결한 뒤 컴퓨터의 HomeTube 설정에서 표시한 QR 코드를 스캔해 주세요.</p>
+        <div id="pairing-controls" hidden>
+            <label for="device-name">휴대폰 이름</label>
+            <input id="device-name" maxlength="60" autocomplete="nickname" placeholder="예: 안방 휴대폰">
+            <button id="connect" class="primary-button" type="button">휴대폰 연결</button>
+        </div>
+        <div id="device-controls" hidden>
+            <button id="add-device" class="primary-button" type="button">다른 휴대폰 연결</button>
+            <button id="focus-pairing-window" class="secondary-button" type="button">페어링 창 앞으로 가져오기</button>
+            <button id="close-pairing-view" class="secondary-button" type="button">페어링 화면 닫기</button>
+            <button id="disconnect-device" class="disconnect-button" type="button">이 휴대폰 연결 해제</button>
+        </div>
+    </dialog>
+
+</body>
+</html>

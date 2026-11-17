@@ -40,6 +40,7 @@ const permissions = require('./permissions.js')
 const updater = require('./updater.js')
 const userstyles = require('./userstyles.js')
 const ua = require('./ua.js')
+const remoteServer = require('./remote/main.js')
 
 //code
 const youtubeUrl = 'https://www.youtube.com/tv'
@@ -51,7 +52,7 @@ let windowDeeplink = null;
 
 async function main() {
     if (argv['version']) {
-        process.stdout.write(`VacuumTube ${package.version}\n`, () => { //console.log then process.exit isn't safe since console.log is async, so that's why it's done with process.stdout instead
+        process.stdout.write(`HomeTube ${package.version}\n`, () => { //console.log then process.exit isn't safe since console.log is async, so that's why it's done with process.stdout instead
             process.exit(0)
         })
 
@@ -300,6 +301,8 @@ async function main() {
         electron.app.quit()
     })
 
+    remoteServer.setup({ electron, userData, getWindow: () => win, configManager })
+
     userstyles.setup({ userData, getWindow: () => win })
 
     await createWindow()
@@ -360,7 +363,7 @@ async function createWindow() {
             preload: path.join(__dirname, 'preload/index.js'),
             spellcheck: false //no use for this here, downloads a file in background on linux (hunspell)
         },
-        title: 'VacuumTube'
+        title: 'HomeTube'
     })
 
     // Ensure the *content* area (excluding OS window borders) stays 16:9 on all platforms.
@@ -453,7 +456,7 @@ async function createWindow() {
         win.webContents.send('blur')
     })
 
-    //keep window title as VacuumTube
+    //keep window title as HomeTube
     win.on('page-title-updated', (e) => {
         e.preventDefault()
     })
@@ -577,6 +580,6 @@ main().catch((err) => {
     //without this, the process would stay running with no window
 
     console.error('Failed to start', err)
-    electron.dialog.showErrorBox('VacuumTube failed to start', err?.stack || String(err)) //i don't like doing this but it's a rare case and it's not worth risking another failure by launching a pretty window for it
+    electron.dialog.showErrorBox('HomeTube failed to start', err?.stack || String(err)) //i don't like doing this but it's a rare case and it's not worth risking another failure by launching a pretty window for it
     electron.app.exit(1)
 })
